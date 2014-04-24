@@ -1,0 +1,30 @@
+<%= render 'project_breadcrumb' %>
+<%= render 'project_nav_tabs' %>
+<div class="row">
+	<div id="project_tags_panel">
+		<% if @tags.any? %>
+      <span class="tag label alert-info">Feature:</span>
+  		<%= render partial: "tag", collection: @tags %>
+      <br/>
+		<% end %>
+    <% if @scenario_tags.any? %>
+    <span class="tag label alert-info">Scenario:</span>
+    <%= render partial: "tag", collection: @scenario_tags %>
+    <% end %>
+	</div>
+</div>
+<div id="start">
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default">iOS 7.0</button>
+	  <button type="button" class="btn btn-default disabled">iOS-7.1</button>
+	  <button type="button" class="btn btn-default disabled">Android</button>
+	</div>
+
+  <%= hidden_field_tag(:project_id, @project.id) %>
+  <%= hidden_field_tag(:selected_tag, @selected_tag ) %>
+  <%= link_to "Start --tags #{@selected_tag}", "#", {id: "start_test_by_tag", class: "btn btn-danger"} %>
+  <%= link_to "Start Selected", "#", {id: "start_test", class: "btn btn-primary pull-right"} %>
+</div>
+<div class="panel-group" id="accordion">
+	<%= render partial: "scenario", collection: @scenarios %>
+</div>

@@ -1,0 +1,10 @@
+<div class="jumbotron">
+	<h2>New Project:</h2>
+	<%= form_for(@project) do |f| %>
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</p>
+		<%= f.submit "Create", class: "btn btn-primary btn-lg" %>
+	<% end %>
+</div>

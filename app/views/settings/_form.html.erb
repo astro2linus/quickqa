@@ -1,0 +1,10 @@
+<%= form_for(@setting) do |f| %>
+  	<%= f.label :name %>
+  	<%= f.text_field :name, placeholder: "Name the setting" %><br/>
+  	<%= f.text_field :project_id, placeholder: @project.id, type: "hidden" %>
+    <%= f.label :project_root_path %>
+    <%= f.text_field :project_root_path, :placeholder => "Project root path", size: 100 %><br/>
+    <%= f.label :enabled? %>
+    <%= f.check_box :enabled %><br />
+  	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

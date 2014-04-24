@@ -1,0 +1,1 @@
+<span class="tag <%= ["@core", "@smoke"].include?(tag) ? 'btn-xs btn-danger' : 'label alert-warning' %>"><%= link_to tag, filter_by_tag_path(:tag => tag), controller: "projects", action: "filter_by_tag" %></span>

@@ -1,0 +1,3 @@
+<div class="panel-default"><span classs="key-word">Feature:</span> <%=  content_tag :span, feature["name"] %></div>
+<% @scenarios = feature["elements"]%>
+<%= render partial: "scenario", collection: @scenarios %>

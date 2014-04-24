@@ -1,0 +1,22 @@
+// Place all the styles related to the SourceFiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#editor {
+   position: relative;
+   overflow: scroll;
+   height: 440px;
+}
+
+#source_file_panel {
+	padding-top: 15px;
+}
+
+#source_file_breadcrumb_panel {
+	.breadcrumb {
+		font-size: 1.2em;
+		font-weight: normal;
+		margin-top: 20px;
+		margin-bottom: 0px;
+		background: none !important;
+	}
+}

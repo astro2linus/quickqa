@@ -1,0 +1,188 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* layout */ 
+.navbar {
+  padding-top: 4px;
+}
+
+.navbar li a {
+  color: #aaa;
+  &:hover {
+    color: #fff;
+    background-color: #333 !important;
+  };
+}
+
+#accordion {
+  margin-top: 10px;
+}
+
+#start {
+  padding-top: 20px;
+  #start_test_by_tag {
+    float: right;
+    margin-left: 10px;
+  }
+}
+/* breadcrumb */
+
+.breadcrumb {
+  background-color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.breadcrumb > li.active {
+  color: #444;
+}
+
+/* nav tabs */
+
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.jumbotron {
+  padding-top: 10px !important;
+  margin: 20px 150px;
+}
+
+/* footer */
+#footer {
+  height: 60px;
+  .credit {
+    padding: 20px 15px;
+  }
+}
+
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+
+/* forms */
+
+
+/* projects index */
+
+#project_list {
+  margin-top: 30px;
+  padding: 0px;
+  text-align: center;
+  ul { 
+    margin: 0px;
+    padding: 0px;
+    list-style:none; 
+  }
+}
+
+.project_column { 
+
+  width: 210px;
+  height: 80px;
+  float: left;
+  margin: 5px 14px;
+  border-left: 8px solid #4183C4 ;
+  border-right: 1px solid #BEDCE7;
+  padding-left: -4px;
+  background: #EAF2F5;
+  vertical-align: center;
+  -webkit-box-shadow: 4px 5px 15px -4px #888;
+     -moz-box-shadow: 4px 5px 10px -4px #888;
+          box-shadow: 4px 5px 15px -4px #888;
+    cursor: move;
+
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .edit, .delete {
+    font-size: 12px;
+  }
+}
+
+/* projects show */
+
+.key-word {
+  color: navy;
+  font-weight: bold;
+}
+
+#project_tags_panel {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  span {
+    word-wrap: normal;
+    display: inline-block;
+  }
+
+  span.btn-xs a {
+    color: white;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+  
+  span.tag {
+    margin-right: 5px;
+    padding: 3px 3px;
+  }
+
+}
+
+.example {
+  border:1px solid #aaa;
+  td {
+    padding: 0 10px;
+  }
+}

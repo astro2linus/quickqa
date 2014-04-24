@@ -1,0 +1,32 @@
+<div id = "source_file_breadcrumb_panel">
+	<%= source_files_bread_crumb(@root) %>
+</div>
+<%= tree_table %>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setReadOnly(true);  // false to make it editable
+    document.getElementById('editor').style.fontSize='12px';
+    editor.setTheme("ace/theme/solarized_light");
+    //editor.setTheme("ace/theme/github");
+    editor.setTheme("ace/theme/monokai");
+    editor.setShowPrintMargin(false);
+
+	var bread_crumb_text = $('#source_file_breadcrumb_panel').text();
+	
+	var re = /(?:\.([^.]+))?$/;
+	var ext = re.exec(bread_crumb_text)[1];
+	//trim ext extra spaces
+	ext = $.trim(ext);
+
+	if (ext == "feature")
+		{ editor.getSession().setMode("ace/mode/gherkin"); }
+	else if (ext == "rb")
+		{ editor.getSession().setMode("ace/mode/ruby"); }
+	else if (ext == "java")
+		{ editor.getSession().setMode("ace/mode/java"); }
+	else if (ext == "js")
+		{ editor.getSession().setMode("ace/mode/javascript"); }
+	else
+		{ editor.getSession().setMode("ace/mode/plain_text"); }
+</script>

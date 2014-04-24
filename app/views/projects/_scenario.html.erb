@@ -1,0 +1,36 @@
+<% @steps = scenario["steps"] %>
+<% @examples = scenario["examples"] %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h6 class="panel-title">
+      <label><input type="checkbox" value="<%= scenario["name"] %>"/></label>
+      <% if scenario.has_key?("id") %>
+      <a data-toggle="collapse" data-parent="#accordion" href="#<%= scenario["id"].sub(';','-') %>">
+        <% if scenario["keyword"] == "Scenario" %>
+        <% @scenario_kw = "Scenario" %>
+        <% elsif scenario["keyword"] == "Scenario Outline" %>
+        <% @scenario_kw = "Scenario Outline" %>
+        <% end %>
+        <span class="key-word"><%= @scenario_kw %>: </span><%= scenario["name"] %>
+      </a>
+      <% end %>
+      <% if scenario.has_key?("tags") %>
+        <% scenario["tags"].map do |t| %>
+          <span class="tag label alert-warning"><%= t["name"] %></span>
+        <% end %>
+      <% end %>
+    </h6>
+  </div>
+  <% if scenario.has_key?("id") %>
+  <div id="<%= scenario["id"].sub(';','-') %>" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <%= render partial: "step", collection: @steps %>
+    </div>
+    <% unless @examples.nil? %>
+    <div class="panel-body">
+      <%= render partial: "example", collection: @examples %>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

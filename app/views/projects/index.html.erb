@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1>Quick QA</h1>
+  <p>Making your tests easier, faster</p>
+  <p><%= link_to 'Create a project', new_project_path, class: "btn btn-lg btn-primary" %> or browse existing projects:</p>
+  <div id="project_list">
+	<ul>
+	<% @projects.in_groups_of(3, false) do |row_projects| %>
+		<div class="row">
+			<% for project in row_projects %>
+		    	<li class="project_column" draggable="true" value="<%= project.id%>">
+		    		<div class="row name"><%= link_to project.name, project %></div>
+		    		<div class="edit"><%= link_to 'Edit', edit_project_path(project) %> | 
+			    	<%= link_to 'Delete', project, :method => :delete, data: { confirm: "Are you sure?" } %>
+			    	</div>
+					</li>
+			<% end %>
+		</div>
+	<% end %>
+	</ul>
+</div>
+</div>

@@ -1,0 +1,38 @@
+// Place all the styles related to the Reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#report_panel {
+	padding-top: 20px;
+	a {
+		margin-left: 10px;
+	}
+}
+#report_list {
+	margin-top: 60px;
+}
+
+#report_show {
+	margin-top: 20px;
+	table {
+		font-size: 13px;
+	}	
+}
+
+#report_show_panel {
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.cucumber_report_frame {
+	border: none;
+	width: 100%;
+	min-height: 1000px;
+}
+
+.alert-default {
+	background-color: #fcfcfc;
+	color: #222!important;
+	border: 1px solid #ccc!important;
+}

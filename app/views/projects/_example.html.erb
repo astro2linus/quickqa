@@ -1,0 +1,14 @@
+<% @rows = example["rows"] %>
+<% example.keys.each do |k| %>
+	<% case k %>
+	<% when "keyword" %>
+		<div>
+			<%= content_tag :span, "#{example[k]}:", class: "key-word" %>
+			<%= content_tag :span, example["name"] %>
+			<%= content_tag :p, example["description"] %>
+			<table class="example">
+				<%= render partial: "row", collection: @rows %>
+			</table>	
+		</div>
+	<% end %>
+<% end %>

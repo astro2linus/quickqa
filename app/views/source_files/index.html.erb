@@ -1,0 +1,10 @@
+<div id = "source_file_panel">
+	<%= link_to "Refresh", refresh_source_files_path({ project_id: @project.id}), class: "btn btn-primary pull-right" %>
+</div>
+<div id="source_file_breadcrumb_panel">
+	<% unless @project.source_files[0].nil? %>
+	<% 		@root = @project.source_files[0].root %>
+	<%=   source_files_bread_crumb(@root) %>
+	<% end %>
+</div>
+<%= tree_table %>

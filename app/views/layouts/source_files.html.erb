@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <title>Source Files</title>
+</head>
+<body>
+
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= render 'projects/project_breadcrumb' %>
+      <%= render 'projects/project_nav_tabs' %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+    <%= render 'layouts/footer' %>
+</body>
+</html>

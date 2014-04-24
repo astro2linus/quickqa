@@ -1,0 +1,11 @@
+<% step.keys.each do |k| %>
+	<% case k %>
+	<% when "keyword" %>
+		<% if step[k] == "Given " || step[k] == "And " || step[k] == "Then " || "When " %>
+			<div>
+				<%= content_tag :span, step[k], class: "key-word" %>
+				<%= content_tag :span, step["name"] %>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>

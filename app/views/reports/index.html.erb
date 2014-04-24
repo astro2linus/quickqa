@@ -1,0 +1,31 @@
+<div id="report_panel">
+<%= link_to "Create Report", new_project_report_path(@project), class: "btn btn-primary pull-right" %>
+<%= link_to "Delete Selected", "#", class: "btn btn-danger pull-right", id: "delete_selected_reports" %>
+</div>
+
+<div id="report_list">
+	<table class="table table-striped">
+		<tr>
+			<th>
+	    	<input id="select_all_reports" type="checkbox">
+	    </th>
+			<th>Report Title</th>
+			<th>Created at</th>
+			<th></th>
+		</tr>
+	  <% @reports.each do |r| %>
+			<tr>
+				<td>
+	      	<input class="checkbox-row" type="checkbox" value=<%="#{r.id}"%>>
+	      </td>
+				<td><%= link_to truncate(r.title,  length: 100, omission: '...'), project_report_path(@project, r) %></td>
+				<td><%= time_ago_in_words(r.created_at) %> ago</td>
+				<td><%= link_to 'Delete', r, :method => :delete, data: { confirm: "Are you sure?" } %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+
+
+

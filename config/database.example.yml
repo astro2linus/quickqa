@@ -1,0 +1,7 @@
+
+development:
+  adapter: postgresql
+  database: quickqa_development
+  username:
+  password:
+  host: localhost
