@@ -19,7 +19,7 @@ Prerequisites
 Get the project from Stash
 ------------------------------
 
-	git clone https://<your username>@stash.englishtown.com/scm/test/quickqa.git
+	git clone https://<your username>@stash.englishtown.com/scm/test/mobile.git
 	
 
 Install QuickQA
