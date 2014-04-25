@@ -10,7 +10,8 @@ class ReportsController < ApplicationController
     report_path = Rails.root.join("public/cucumber_reports/cucumber-html-reports")
     system("rm -rf #{report_path}")
     @report.dump_report
-    sleep 0.2 while !File.exist?(report_path)
+    feature_overview = Rails.root.join("public/cucumber_reports/cucumber-html-reports/feature-overview.html")
+    sleep 0.2 while !File.exist?(feature_overview)
     sleep 0.5
   end
 

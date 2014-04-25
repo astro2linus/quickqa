@@ -12,13 +12,12 @@ module ProjectsHelper
 	end
 
 	def get_project_root_path(project)
-		# the features folder is expected to be directly in this folder, not in its subfolder
-		project_repo_name = project.name.gsub(' ','_')
+		# the features folder is expected to be directly in this folder, not in its subfolder		
 		if project.settings.where(enabled: true).first.nil?
-			project_root_path = path = Rails.root.join("scripts_repo/#{project_repo_name}")
+			project_repo_name = project.name.gsub(' ','_')
+			Rails.root.join("scripts_repo/#{project_repo_name}")
 		else
-			project_root_path = project.settings.where(enabled: true).first.project_root_path
+			project.settings.where(enabled: true).first.project_root_path
 		end
-		project_root_path
 	end
 end
