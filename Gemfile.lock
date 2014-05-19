@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.2.7)
     actionmailer (4.0.3)
       actionpack (= 4.0.3)
       mail (~> 2.5.4)
@@ -30,38 +29,10 @@ GEM
       activerecord (>= 3.0.0)
     arel (4.0.2)
     atomic (1.1.15)
-    awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
-    blankslate (2.1.2.4)
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     builder (3.1.4)
-    calabash-android (0.4.18)
-      awesome_print
-      cucumber
-      escape (~> 0.0.4)
-      httpclient (~> 2.3.2)
-      json
-      retriable (~> 1.3.3.1)
-      rubyzip (~> 0.9.9)
-      slowhandcuke
-      xamarin-test-cloud (>= 0.9.23)
-    calabash-common (0.0.1)
-      cucumber (~> 1.3.0)
-    calabash-cucumber (0.9.168)
-      CFPropertyList
-      awesome_print
-      bundler (~> 1.1)
-      calabash-common (~> 0.0.1)
-      cucumber (~> 1.3.0)
-      edn
-      geocoder (~> 1.1.8)
-      httpclient (~> 2.3.3)
-      json
-      run_loop (~> 0.2.0)
-      sim_launcher (~> 0.4.9)
-      slowhandcuke
-      xamarin-test-cloud (~> 0.9.27)
     capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -95,14 +66,10 @@ GEM
       activerecord (>= 3.0, < 4.1)
       delayed_job (>= 3.0, < 4.1)
     diff-lcs (1.2.5)
-    edn (1.0.2)
-      parslet (~> 1.4.0)
     erubis (2.7.0)
-    escape (0.0.4)
     execjs (2.0.2)
     ffi (1.9.3)
     formatador (0.2.4)
-    geocoder (1.1.9)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     guard (2.5.1)
@@ -119,7 +86,6 @@ GEM
       guard (>= 1.1)
       spork (>= 0.8.4)
     hike (1.2.3)
-    httpclient (2.3.4.1)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -149,8 +115,6 @@ GEM
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    parslet (1.4.0)
-      blankslate (~> 2.0)
     pg (0.15.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -158,8 +122,6 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
-    rack-protection (1.5.2)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.3)
@@ -186,9 +148,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
-    retriable (1.3.3.1)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -204,10 +163,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
-    rubyzip (0.9.9)
-    run_loop (0.2.0)
-      json
-      thor
+    rubyzip (1.1.0)
     sass (3.3.0)
       rake
     sass-rails (4.0.1)
@@ -217,15 +173,12 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    sim_launcher (0.4.9)
-      sinatra
-    sinatra (1.4.4)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
+    selenium-webdriver (2.40.0)
+      childprocess (>= 0.5.0)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
     slop (3.4.7)
-    slowhandcuke (0.0.3)
-      cucumber
     spork (1.0.0rc4)
     spork-rails (4.0.0)
       rails (>= 3.0.0, < 5)
@@ -253,14 +206,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    xamarin-test-cloud (0.9.30)
-      bundler (>= 1.3.0, < 2.0)
-      json
-      mime-types (< 2.0)
-      rest-client (~> 1.6.7)
-      retriable (~> 1.3.3.1)
-      rubyzip (~> 0.9.9)
-      thor (>= 0.18.1)
+    websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -271,8 +217,6 @@ DEPENDENCIES
   ancestry
   bcrypt-ruby (= 3.1.2)
   bootstrap-sass (~> 3.1.1)
-  calabash-android (= 0.4.18)
-  calabash-cucumber (= 0.9.168)
   capybara (= 2.1.0)
   childprocess (= 0.5.1)
   coffee-rails (~> 4.0.0)
@@ -290,5 +234,6 @@ DEPENDENCIES
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)
   sdoc
+  selenium-webdriver
   spork-rails (= 4.0.0)
   uglifier (>= 1.3.0)

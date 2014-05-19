@@ -6,20 +6,21 @@ class Project < ActiveRecord::Base
 
   def run_test_old(title, cmd)
     puts cmd
-    #ENV['DEVICE_TARGET'] = 'iPad - Simulator - iOS 7.0'
     result = `#{cmd}`
     new_report = self.reports.create(:title => title, :content => result)
   end
 
   def run_test(title, cmd) 
     puts cmd
-    system(cmd)
-    result = ""
     path = Rails.root.join("tmp/test.json")
+    system("rm -f #{path}")
+    system(cmd)
+    result = "[{}]"
     File.open( path, 'r' ) do |out|
         result = out.read.to_s
     end
-    self.reports.create(:title => title, :content => result)
+    report = self.reports.create(:title => title, :content => result)
+    ReportMailer.report_email(report).deliver
   end
 
 	def create_source_files_tree

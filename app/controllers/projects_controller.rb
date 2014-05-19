@@ -57,12 +57,20 @@ class ProjectsController < ApplicationController
 
 	def start_test_by_tag
 		@project = Project.find(params[:project_id])
-		tag_option = "--tags #{params[:selected_tag]} "
-		project_root_path, json_report_path, device_target = runtime_option(@project)
-		cmd = "cd #{project_root_path} && #{device_target} cucumber PLATFORM=ios PRODUCT=englishtown #{tag_option} -f json -o #{json_report_path} -p all"
+		title = "no title"
+		tag_option = ""
+		if params[:selected_tag].nil?
+			title = "All scenarios"
+		else
+			tag_option = "--tags #{params[:selected_tag]} "
+			title = tag_option.to_s
+		end
 
-		title = tag_option.to_s
-		@project.delay.run_test(title, cmd)
+		#tag_option = params[:selected_tag].nil? ? "" : "--tags #{params[:selected_tag]} "
+		project_root_path, json_report_path, device_target = runtime_option(@project)
+		cmd = "cd #{project_root_path} && cucumber #{tag_option} -f json -o #{json_report_path}"
+
+		@project.run_test(title, cmd)
 		render :nothing => true
 	end
 
@@ -76,9 +84,9 @@ class ProjectsController < ApplicationController
 		end
 
 		project_root_path, json_report_path, device_target = runtime_option(@project)
-		cmd = "cd #{project_root_path} && #{device_target} cucumber PLATFORM=ios PRODUCT=englishtown #{scenario_option} -f json -o #{json_report_path} -p all"
+		cmd = "cd #{project_root_path} && cucumber #{scenario_option} -f json -o #{json_report_path}"
 		title = "Scenarios: " + scenario_names.join("; ")
-		@project.delay.run_test(title, cmd)
+		@project.run_test(title, cmd)
 
 		render :nothing => true
 	end

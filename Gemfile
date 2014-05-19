@@ -5,8 +5,6 @@ gem 'rails', '4.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'gherkin'
-gem 'calabash-cucumber', '0.9.168'
-gem 'calabash-android', '0.4.18'
 gem 'pg'
 
 group :development, :test do
@@ -18,9 +16,9 @@ group :development, :test do
   gem 'cucumber', '1.3.11'
 end
 
-group :test do
-  gem 'capybara', '2.1.0'
-end
+gem 'capybara', '2.1.0'
+gem 'selenium-webdriver'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
