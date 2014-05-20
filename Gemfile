@@ -40,6 +40,15 @@ gem 'ancestry'
 
 gem 'delayed_job_active_record'
 
+# Use Capistrano for deployment
+group :development do
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rails', '~> 1.1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1.2', require: false
+  gem 'capistrano-rbenv', '2.0.2', require: false
+end
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
